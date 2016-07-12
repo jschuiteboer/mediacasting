@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<script src="js/libs/jquery/jquery.js"></script>
+		<script src="js/libs/jqueryui/jquery-ui.js"></script>
+		<script src="js/mediacasting-slide.js"></script>
+		<script>
+			jQuery(document).ready(function($) {
+				$('.slides').slide({
+					waitTime: 2000,
+					animationTime: 1000,
+					animation: animations.slideFromLeft,
+				});
+			});
+		</script>
+		<style>
+			html, body, ul {
+				margin: 0px;
+				padding: 0px;
+			}
+			ul.slides > * {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				/* force gpu rendering */
+				display: block;
+				-webkit-transform: translate3d(0,0,0);
+				-webkit-transition: all 0.5s linear;
+				transform: translate3d(0,0,0);
+				transition: all 0.5s linear;
+				-webkit-backface-visibility:hidden;
+				-webkit-perspective: 1000;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="slides">
+			<li style="background: red;">
+				<header>HEADER</header>
+				SLIDE 1
+				<footer>FOOTER</footer>
+			</li>
+			<li style="background: green;">
+				<header>HEADER</header>
+				SLIDE 2
+				<footer>FOOTER</footer>
+			</li>
+			<li style="background: blue;">
+				<header>HEADER</header>
+				SLIDE 3
+				<footer>FOOTER</footer>
+			</li>
+			<li style="background: yellow;">
+				<header>HEADER</header>
+				SLIDE 4
+				<footer>FOOTER</footer>
+			</li>
+			<li style="background: orange;">
+				<header>HEADER</header>
+				SLIDE 5
+				<footer>FOOTER</footer>
+			</li>
+			<li style="background: brown;">
+				<header>HEADER</header>
+				SLIDE 6
+				<footer>FOOTER</footer>
+			</li>
+		</ul>
+	</body>
+</html>
